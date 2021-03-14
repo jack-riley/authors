@@ -1,0 +1,103 @@
+.wrapper{
+    width: 950px;
+    min-height: 200px;
+    margin: auto;
+    background-color: lightgrey;
+}
+
+.add{
+    min-width: 300px;
+    min-height: 30px;
+    margin: 10px 30px;
+    padding: 5px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: lightsalmon;
+    text-align: center;
+
+}
+
+.add #title{
+    width: 335px;
+    margin-left: 45px;
+
+}
+
+.add #name{
+    width: 300px;
+}
+
+.add #desc{
+    vertical-align: top;
+    display: inline-block;
+    margin-top: -3px;
+}
+.add textarea{
+    display: inline-block;
+}
+
+.add button{
+    display: block;
+    margin: 5px 200px;
+}
+
+
+.list{
+    min-width: 100px;
+    min-height: 100px;
+    padding: 5px 10px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 30px;
+    background-color: grey;
+
+
+
+    
+}
+.column{
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: grey;
+
+}
+#id{
+    width: 50px;
+    display: inline-block;
+}
+#action{
+    width: 50px;
+    display: inline-block;
+}
+
+.column h3{
+    text-align: left;
+    background-color: lightgray;
+    margin-right: -5px;
+    margin-left: -5px;
+
+
+
+}
+.column ul{
+    text-align: left;
+    background-color:lightgray;
+    text-decoration: none;
+    padding: 5px;
+    margin-top: -20px;
+    margin-right: -5px;
+    margin-left: -5px;
+
+}
+.column li{
+    list-style-type: none;
+    background-color: lightgray;
+}
+.column li:nth-child(odd){
+    background-color: white;
+}
+
+.other button{
+    margin: 20px 450px;
+}

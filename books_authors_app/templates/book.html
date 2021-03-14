@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class ="wrapper">
+        <div class="add">
+            <h1 class="head">
+                Add a Book
+            </h1>
+
+
+            <form action="/process_books" method="post">
+                {% csrf_token %}
+                <p>Title: <input id ="title"  name="title" type="text"></p>
+                <p id = "desc" >Description:</p> <textarea name="desc" cols="40" rows="10" type = "text"></textarea>
+                <button type="submit">Add</button>
+            </form>
+
+        </div>
+
+        <div class = list>
+            <div class = "column" id = "id">
+                <h3>ID</h3>
+                <ul>
+                    {% for book in book_list %}
+                        <li>{{ book.id }}</li>
+                    {% endfor %}
+                </ul>
+            </div>   
+            <div class = "column">     
+                <h3>Title</h3>
+                <ul>
+                    {% for book in book_list %}
+                        <li>{{ book.title }}</li>
+                    {% endfor %}
+                </ul>
+            </div>   
+            <div class = "column" id ="action">
+                <h3>Action</h3>
+                <ul>
+                    {% for book in book_list %}
+                        <li><a href="/book_detail/{{book.id}}">View</a></li>
+                    {% endfor %}
+                </ul>
+            </div>     
+        </div>
+        <div class="other">
+            <a href="/authors"><button>Go to Authors</button></a>
+        </div>
+    </div>
+    
+</body>
+</html>

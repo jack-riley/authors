@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <Name>Authors</Name>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class ="wrapper">
+        <div class="add">
+            <h1 class="head">
+                Add a Author
+            </h1>
+
+
+            <form action="/process_authors" method="post">
+                {% csrf_token %}
+                <p>First Name: <input id ="name"  name="first_name" type="text"></p>
+                <p>Last Name: <input id ="name"  name="last_name" type="text"></p>
+
+                <p id = "desc" >Notes:</p> <textarea name="notes" cols="40" rows="10" type = "text"></textarea>
+                <button type="submit">Add</button>
+            </form>
+
+        </div>
+
+        <div class = list>
+            <div class = "column" id = "id">
+                <h3>ID</h3>
+                <ul>
+                    {% for author in author_list %}
+                        <li>{{ author.id }}</li>
+                    {% endfor %}
+                </ul>
+            </div>   
+            <div class = "column">     
+                <h3>Name</h3>
+                <ul>
+                    {% for author in author_list %}
+                        <li>{{ author.first_name }} {{ author.last_name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>   
+            <div class = "column" id ="action">
+                <h3>Action</h3>
+                <ul>
+                    {% for author in author_list %}
+                        <li><a href="/author_detail/{{author.id}}">View</a></li>
+                    {% endfor %}
+                </ul>
+            </div>     
+        </div>
+        <div class="other">
+            <a href="/"><button>Go to Books</button></a>
+        </div>
+    </div>
+    
+</body>
+</html>
